@@ -1,0 +1,114 @@
+<div id="form">
+  <form class="form-box center">
+    <div class="container">
+      <!-- HEADER-->
+      <div class="row">
+        <!-- Title -->
+        <div class="col-xs-12">
+          <h3 id="txt-centered">Fill This Out</h3>
+        </div>
+      </div>
+      <!-- Gender -->
+      <div class="row">
+        <div class="row">
+          <div class="col-xs-4"></div>
+          <div class="col-xs-4"><h4 id="txt-centered">Gender</h4></div>
+          <div class="col-xs-4"></div>
+        </div>
+        <div class="row" id="txt-centered">
+          <div class="col-xs-6">
+            <input type="radio" id="Male" name="gender" value="Male" />
+            <label for="Male">Male</label>
+          </div>
+
+          <div class="col-xs-6">
+            <input
+              type="radio"
+              id="Female"
+              name="gender"
+              value="Female"
+            />
+            <label for="Female">Female</label>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="txt-centered">
+        <!-- Weight -->
+        <div class="col-xs-12">
+          <div class="row">
+            <label for="weight">Weight</label>
+          </div>
+          <div class="row">
+            <input
+              type="number"
+              id="txt-centered"
+              placeholder="Your Weight"
+              name="Weight"
+              value="Weight"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- Goals -->
+      <div class="row" id="txt-centered">
+        <div class="row">
+          <h3>Tell Us Your Goals</h3>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <select id="Weight Goals" name="Weight Goals">
+              <option value="" disabled selected hidden>
+                Weight Goals
+              </option>
+              <option value="Gain">Gain Weight</option>
+              <option value="Lose">Lose Weight</option>
+              <option value="Maintain">Maintain Weight</option>
+            </select>
+          </div>
+          <div class="col-xs-6">
+            <select id="Fitness-Goals" name="Fitness Goals">
+              <option value="" disabled selected hidden>
+                Fitness Goals
+              </option>
+              <option value="BuildM">Build Muscle</option>
+              <option value="BuildS">Build Strength</option>
+              <option value="Endurance">Endurance</option>
+              <option value="BothMS">Build Muscle & Strength</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="txt-centered">
+        <!-- Preferred Type of Resistance -->
+        <div class="row">
+          <h3>Preferred Type of Resistance</h3>
+        </div>
+        <div class="row">
+          <select id="Resistance" name="Resistance">
+            <option value="" disabled selected hidden>
+              Type of Resistance
+            </option>
+            <option value="Weights">Weights</option>
+            <option value="Calisthenics">Calisthenics</option>
+            <option value="Both">Both</option>
+          </select>
+        </div>
+      </div>
+      <div class="row" id="txt-centered">
+        <form
+          id="email"
+          action="https://www.freecodecamp.com/email-submit"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email Address"
+          />
+          <button id="submit" type="button" name="Submit">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </form>
+</div>
