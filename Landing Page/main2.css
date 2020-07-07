@@ -119,6 +119,7 @@ header {
   position: absolute;
   left: 0;
   bottom: 0;
+  z-index: 2;
 }
 #video {
   grid-area: bb;
@@ -165,7 +166,7 @@ header {
 }
 
 .btn:hover {
-  box-shadow: 1px 1px 25px 10px red;
+  box-shadow: 1px 1px 25px 10px #d5616a;
 }
 
 .btn:before {
@@ -199,6 +200,8 @@ header {
   filter: drop-shadow(5px -5px 4px #595959);
   border-right: 200px solid transparent;
   margin: 0;
+  position: relative;
+  z-index: 4;
 }
 .left-side h3 {
   color: white;
@@ -222,6 +225,9 @@ header {
   filter: drop-shadow(5px -5px 2px #595959);
   position: relative;
 }
+.right-side img {
+  transform: rotateY(180deg);
+}
 #Fitness-Goals {
   width: 60%;
 }
@@ -229,25 +235,34 @@ header {
   grid-area: c;
   width: 100%;
 }
-
 .service-title {
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 60px;
+  width: 100%;
+  height: 100px;
+  /* Firefox */
+  display: -moz-box;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+  /* Safari and Chrome */
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  /* W3C */
+  display: box;
+  box-pack: center;
+  box-align: center;
 }
-.logo {
-  font: 84px "Arial Narrow", sans-serif; /* I picked this font because it's the closest looking 'web safe' font http://cssfontstack.com/ */
-  color: #fefefe;
-  text-transform: uppercase;
-  letter-spacing: -4px;
+.service-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 .text {
-  position: absolute;
-  transform: translate(50%, -50%);
+  width: 450px;
+  height: 60px;
+  font-size: 60px;
   text-transform: uppercase;
   font-family: verdana;
   font-weight: 700;
-  color: #f5f5f5;
   text-shadow: 1px 1px 1px #919191, 1px 2px 1px #919191, 1px 3px 1px #919191,
     1px 4px 1px #919191, 1px 5px 1px #919191, 1px 6px 1px #919191,
     1px 7px 1px #919191, 1px 8px 1px #919191, 1px 9px 1px #919191,
@@ -255,59 +270,11 @@ header {
     1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2),
     1px 30px 60px rgba(16, 16, 16, 0.4);
 }
-/* stuff for both words */
-.logo span {
-  position: relative;
+#mobile {
+  text-align: center;
+  margin-bottom: -16px;
+  visibility: hidden;
 }
-.logo span:before,
-.logo span:after {
-  content: "";
-  position: absolute;
-  border-width: 32px; /* makes a nice, big 64px square */
-  border-style: solid;
-  border-color: transparent;
-  height: 0;
-  z-index: 10;
-}
-
-/* stuff for 1st word */
-.logo .word1 {
-  color: pink;
-  margin-right: -38px;
-  transform: rotateY(180deg); /* using Prefix free */
-  display: inline-block; /* required for transform */
-  z-index: 10; /* stack 1st word on top */
-}
-.logo .word1:before {
-  right: -4px; /* would be left, but we flipped the word */
-  top: -9px;
-  border-top-color: #0d0d0d; /* match background color */
-  border-right-color: #0d0d0d; /* would be left, but we flipped the word */
-}
-.logo .word1:after {
-  left: 17px; /* would be right, but we flipped the word */
-  bottom: -15px;
-  border-bottom-color: #0d0d0d;
-  border-left-color: #0d0d0d; /* would be right, but we flipped the word */
-}
-
-/* stuff for 2nd word */
-.logo .word2 {
-  z-index: 0; /* stack 2nd word below */
-}
-.logo .word2:before {
-  left: -4px;
-  top: -6px;
-  border-top-color: #0d0d0d;
-  border-left-color: #0d0d0d;
-}
-.logo .word2:after {
-  right: -4px;
-  bottom: 4px;
-  border-bottom-color: #0d0d0d;
-  border-right-color: #0d0d0d;
-}
-
 .box-img {
   width: 100%;
   height: 275px;
@@ -452,15 +419,10 @@ header {
     left: 125px;
   }
 }
-@media only screen and (max-width: 900px) {
-  .left-side h3 {
-    left: 150px;
+@media only screen and (max-width: 950px) {
+  .service-title {
+    margin-top: 0px;
   }
-  .left-side p {
-    left: 75px;
-  }
-}
-@media only screen and (max-width: 900px) {
   .left-side h3 {
     left: 150px;
   }
@@ -468,5 +430,17 @@ header {
     left: 70px;
     font-size: 15px;
     width: 300px;
+  }
+  #img2 {
+    left: -50px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  #img2 {
+    left: -75px;
+  }
+  #mobile {
+    color: whitesmoke;
+    visibility: visible;
   }
 }
